@@ -41,5 +41,5 @@ class ProductProduct(models.Model):
     ):
         context = dict(self._context, excluded_location_ids=self.excluded_location_ids)
         return super(
-            ProductProduct, self.with_context(context)
+            ProductProduct, self.with_context(**context)
         )._compute_quantities_dict(lot_id, owner_id, package_id, from_date, to_date)
